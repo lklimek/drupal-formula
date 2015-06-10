@@ -2,15 +2,6 @@
 
 include:
     - php
-    - php.pdo
-    - php.curl
-    - php.gd
-    - php.imagick
-    - php.json
-    - php.mysqlnd
-    - php.pear
-    - php.soap
-    - php.xml
 
 # use archive.extracted to get drupal archive installed New in version 2014.1.0.
 {% if grains['saltversion'] > '2014.7.0' %}
@@ -37,6 +28,16 @@ drupal:
         - source_hash: {{ drupal.source_hash }}
         - user: {{ drupal.user }}
         - group: {{ drupal.group }}
+    require:
+      - php.pdo
+      - php.curl
+      - php.gd
+      - php.imagick
+      - php.json
+      - php.mysqlnd
+      - php.pear
+      - php.soap
+      - php.xml
 
 # extract drupal tarball
 extract-drupal:
