@@ -37,8 +37,8 @@ drupal:
         - source_hash: {{ drupal.source_hash }}
         - user: {{ drupal.user }}
         - group: {{ drupal.group }}
-    require.pkg: 
-      - php.pdo
+    require: 
+      - pkg: php.pdo
       - php.curl
       - php.gd
       - php.imagick
