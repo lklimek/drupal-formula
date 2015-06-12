@@ -2,6 +2,7 @@
 
 include:
     - php
+    - drush
 
 # use archive.extracted to get drupal archive installed New in version 2014.1.0.
 {% if grains['saltversion'] > '2014.7.0' %}
@@ -38,6 +39,7 @@ drupal:
       - pkg: php-pear
       - pkg: php-soap
       - pkg: php-xml
+      - pecl: drush
 
 # extract drupal tarball
 extract-drupal:
